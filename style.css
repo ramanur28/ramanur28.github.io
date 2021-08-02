@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url(img/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+section {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  width: 70vw;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.star span {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 30px;
+  position: fixed;
+  animation-name: particleAnimation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform: rotate(90deg);
+  z-index: -2;
+}
+
+.star span::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100px;
+  right: 1px;
+  top: 0;
+  height: 5px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+.star span:nth-of-type(1) {
+  left: 25%;
+  animation-duration: 10s;
+}
+.star span:nth-of-type(2) {
+  left: 50%;
+  animation-duration: 5s;
+}
+.star span:nth-of-type(3) {
+  left: 65%;
+  animation-duration: 7s;
+}
+span.star:nth-of-type(4) {
+  left: 16%;
+  animation-duration: 6s;
+}
+.star span:nth-of-type(5) {
+  left: 30%;
+  animation-duration: 8s;
+}
+
+@keyframes particleAnimation {
+  from {
+    top: -100px;
+  }
+  to {
+    top: calc(100% + 100px);
+    opacity: 0;
+  }
+}
+
+#jumbotron {
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #21094ec0;
+}
+
+.active {
+  background-color: #21094e;
+}
+
+.greet {
+  font: bold 10vmin/30px sans-serif;
+  margin: 50px auto;
+}
+
+.greet::after {
+  content: 'Im Retdev';
+  animation: textAnim 10s linear infinite;
+}
+
+@keyframes textAnim {
+  25% {
+    content: 'Im A Programmer';
+  }
+  50% {
+    content: 'Im A Content Creator';
+  }
+  75% {
+    content: 'Im A Student';
+  }
+}
+
+.button {
+  margin-top: 200px;
+  width: 150px;
+  height: 60px;
+  padding: 10px;
+  border: 3px solid black;
+  display: flex;
+  transition: 0.5s;
+  background-color: #5b4cfc98;
+  border-radius: 50px;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+#contactBtn {
+  font: bold 20px/20px sans-serif;
+  color: black;
+  text-align: center;
+  margin: auto;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  border-radius: 20px;
+  background-color: #21094e;
+  color: white;
+}
+
+.sosmed {
+  margin-top: 30px;
+}
+
+.sosmed a {
+  font-size: 50px;
+}
+
+svg:hover {
+  color: #5b4cfc98;
+}
+
+.about {
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, #bfb0dbbe, #bfb0db);
+  border-radius: 30px;
+  background-size: cover;
+  overflow: auto;
+}
+
+hr {
+  width: 240px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-top: 3px solid #999;
+}
+
+.item {
+  margin-top: 30px;
+  border: 2px solid #999;
+  border-radius: 50px;
+  height: 300px;
+  width: 300px;
+  padding: 5px;
+  position: relative;
+  transition: 0.7s;
+  background-image: linear-gradient(to bottom right, #bfb0dbbe, #bfb0db);
+}
+
+.item:hover {
+  animation: 0.7s cardanimation ease-out forwards;
+}
+
+@keyframes cardanimation {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 15px;
+  }
+}
+
+.footer {
+  background-color: rgb(24, 24, 24);
+  color: #eaeaea;
+  padding: 20px;
+}
+
+footer {
+  margin-top: 100px;
+}
+
+.footer-link {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: #eaeaea;
+  cursor: pointer;
+  font: 20px/40px sans-serif;
+}
+input {
+  margin: 15px 20px;
+  border-radius: 30px;
+  text-align: center;
+  width: 275px;
+  outline: none;
+}
+#message {
+  margin: 15px 20px;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 15px;
+}
+
+.footer-line {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .button {
+    margin-top: 137px;
+  }
+  .greet {
+    font-size: 32px;
+  }
+}
